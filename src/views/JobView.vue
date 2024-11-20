@@ -1,10 +1,14 @@
 <script setup>
 import { onMounted, reactive } from "vue";
-import { useRoute, RouterLink } from "vue-router";
+import { useRoute, RouterLink, useRouter } from "vue-router";
 import axios from "axios";
 import DotLoader from "vue-spinner/src/DotLoader.vue";
 import BackButton from "@/components/BackButton.vue";
+import { useToast } from "vue-toastification";
+
 const route = useRoute();
+const router = useRouter();
+const toast = useToast();
 
 const jobId = route.params.id;
 
@@ -12,6 +16,22 @@ const state = reactive({
   job: {},
   isLoading: true,
 });
+
+const deleteJob = async () => {
+  try {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this job ?"
+    );
+    if (confirm) {
+      await axios.delete(`/api/jobs/${jobId}`);
+      toast.success("Job Deleted Successfully");
+      router.push("/jobs");
+    }
+  } catch (error) {
+    console.error("Error deleting job", error);
+    toast.error("Job Not Deleted");
+  }
+};
 
 onMounted(async () => {
   try {
@@ -26,7 +46,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <BackButton/>
+  <BackButton />
   <section v-if="!state.isLoading" class="bg-green-50">
     <div class="container px-6 py-10 m-auto">
       <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-70/30">
@@ -39,8 +59,8 @@ onMounted(async () => {
             <div
               class="flex justify-center mb-4 text-gray-500 align-middle md:justify-start"
             >
-            <i class="mt-1 mr-1 text-orange-700 pi pi-map-marker"></i>
-            <p class="text-orange-700">{{ state.job.location }}</p>
+              <i class="mt-1 mr-1 text-orange-700 pi pi-map-marker"></i>
+              <p class="text-orange-700">{{ state.job.location }}</p>
             </div>
           </div>
 
@@ -81,7 +101,9 @@ onMounted(async () => {
 
             <h3 class="text-xl">Contact Phone:</h3>
 
-            <p class="p-2 my-2 font-bold bg-green-100">{{ state.job.company.contactPhone }}</p>
+            <p class="p-2 my-2 font-bold bg-green-100">
+              {{ state.job.company.contactPhone }}
+            </p>
           </div>
 
           <!-- Manage -->
@@ -94,6 +116,7 @@ onMounted(async () => {
               Edit Job
             </RouterLink>
             <button
+              @click="deleteJob"
               class="block w-full px-4 py-2 mt-4 font-bold text-white bg-red-500 rounded-full hover:bg-red-600 focus:outline-none focus:shadow-outline"
             >
               Delete Job

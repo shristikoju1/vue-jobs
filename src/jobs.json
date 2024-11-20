@@ -99,18 +99,21 @@
       }
     },
     {
-      "id": "2efe",
-      "type": "Internship",
+      "type": "Full-Time",
       "title": "Leigh Jensen",
       "description": "Provident asperiore",
       "salary": "Under $50K",
       "location": "Vel voluptatem qui m",
       "company": {
-        "name": "Chaney and Nolan Traders",
-        "description": "Ipsa consequatur si",
-        "contactEmail": "xesybove@mailinator.com",
-        "contactPhone": "+1 (347) 877-7822"
-      }
+        "name": {
+          "name": "xyz",
+          "description": "Provident asperiore",
+          "contactEmail": "xyz@gmail.com"
+        },
+        "description": "Provident asperiore",
+        "contactEmail": "xyz@gmail.com"
+      },
+      "id": "2efe"
     }
   ]
 }
