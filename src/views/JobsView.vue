@@ -4,4 +4,5 @@ import JobListings from '@/components/JobListings.vue';
 
 <template>
     <JobListings/>
+    console.log(2);
 </template>
