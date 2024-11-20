@@ -128,7 +128,7 @@ onMounted(async () => {
   </section>
 
   <!-- Show loading spinner while loading is true -->
-  <div v-else class="py-6 text-center text-gray-500">
+  <div v-else class="flex items-center justify-center min-h-screen py-6 text-gray-500">
     <DotLoader />
   </div>
 </template>

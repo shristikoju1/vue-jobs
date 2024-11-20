@@ -26,23 +26,17 @@ const isActiveLink = (routePath) => {
             <div class="flex space-x-2">
               <RouterLink
                 to="/"
+                class="px-3 py-2 text-white rounded-md"
                 :class="[
-                  isActiveLink('/') ? 'bg-green-900 px-3 py-2' : 'px-3',
-                  'py-2',
-                  'text-white',
-                  'rounded-md',
-                  'hover:bg-gray-900 hover:text-white',
+                  isActiveLink('/') ? 'bg-green-900' : 'hover:bg-gray-900',
                 ]"
                 >Home</RouterLink
               >
               <RouterLink
                 to="/jobs"
+                class="px-3 py-2 text-white rounded-md"
                 :class="[
-                  isActiveLink('/jobs') ? 'bg-green-900' : 'text-white',
-                  'px-3',
-                  'py-2',
-                  'rounded-md',
-                  'hover:bg-gray-900 hover:text-white',
+                  isActiveLink('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900',
                 ]"
               >
                 Jobs
@@ -51,8 +45,7 @@ const isActiveLink = (routePath) => {
                 to="/jobs/add"
                 class="px-3 py-2 text-white rounded-md"
                 :class="[
-                  isActiveLink('/jobs/add') ? 'bg-green-900' : 
-                  'hover:bg-gray-900',
+                  isActiveLink('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900',
                 ]"
                 >Add Job</RouterLink
               >

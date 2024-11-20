@@ -83,37 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "b460",
-      "type": "Full-Time",
-      "title": "Simon Stephenson",
-      "description": "Quis et quisquam vol",
-      "salary": "$150K - $175K",
-      "location": "Beatae libero dolore",
-      "company": {
-        "name": "Griffith Edwards LLC",
-        "description": "Et incidunt numquam",
-        "contactEmail": "rekoduheli@mailinator.com",
-        "contactPhone": "+1 (936) 206-7448"
-      }
-    },
-    {
-      "type": "Full-Time",
-      "title": "Leigh Jensen",
-      "description": "Provident asperiore",
-      "salary": "Under $50K",
-      "location": "Vel voluptatem qui m",
-      "company": {
-        "name": {
-          "name": "xyz",
-          "description": "Provident asperiore",
-          "contactEmail": "xyz@gmail.com"
-        },
-        "description": "Provident asperiore",
-        "contactEmail": "xyz@gmail.com"
-      },
-      "id": "2efe"
     }
   ]
 }
